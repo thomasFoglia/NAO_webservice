@@ -1,4 +1,10 @@
 <?php
+/*
+*
+* APPEL :
+* http://localhost/EPSI/NAO/NAO_webservice/serveur.php?name=PRENOM%20NOM
+*
+*/
 
 spl_autoload_register('apiAutoload');
 function apiAutoload($classname)
