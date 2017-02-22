@@ -23,13 +23,12 @@ function apiAutoload($classname)
 $request = new Request();
 
 // route the request to the right place
-$controller_name = ucfirst($request->url_elements[1]) . 'Controller';
+$controller_name = 'DefaultController';
 if (class_exists($controller_name)) {
     $controller = new $controller_name();
-    $action_name = strtolower($request->verb) . 'Action';
+    $action_name = 'getAction';
     $result = $controller->$action_name($request);
-
-    $view_name = ucfirst($request->format) . 'View';
+    $view_name = 'JsonView';
     if(class_exists($view_name)) {
         $view = new $view_name();
         $view->render($result);
