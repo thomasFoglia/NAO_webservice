@@ -3,10 +3,13 @@
 class DefaultController
 {
     public function getAction($request) {
+      $data = "";
+      if (isset($request->parameters["name"])) {
         $name_to_search = $request->parameters["name"];
         $data = $this->callAPI($name_to_search);
 
         header("HTTP/1.1 200 OK");
+      }
         return $data;
     }
 
